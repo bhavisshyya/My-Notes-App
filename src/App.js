@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./Component/Header";
+import NoteList from "./Component/NoteList";
+import SearchNote from "./Component/SearchNote";
 
 function App() {
+
+  const [notes, setNotes] = useState([]);
+  const [searchNote, setSearchNote] = useState("")
+  const [darkmode , setDarkmode] = useState(false)
+  function handleSearch(e){
+    setSearchNote(e);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={darkmode && "dark-mode"}>
+    <Header setDarkmode={setDarkmode} />
+    <SearchNote handleSearch={handleSearch}/>
+    <NoteList  notes={notes.filter(note => note.text.includes(searchNote))} setNotes={setNotes} />
     </div>
   );
 }
