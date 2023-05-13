@@ -4,4 +4,4 @@
 
 With our app, you can create notes on the go, from anywhere, and on any device. Our simple and intuitive interface makes it easy to write, edit, and organize your notes, and our robust search feature ensures that you can always find what you're looking for."
 
-[Link](https://my-notes-app05.netlify.app)
+[Give it a Try, Click Me 🖱️](https://my-notes-app05.netlify.app)
